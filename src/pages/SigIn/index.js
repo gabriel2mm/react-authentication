@@ -1,6 +1,7 @@
 import React, {useState, useContext}from 'react'
-import { Layout, Form, Input, Button, Row, Col , Alert} from 'antd';
+import { Layout, Form, Input, Button, Row, Col} from 'antd';
 import AuthContext from '../../context/authContext';
+import AlertComponent from '../../components/Alerts'
 import './style.css'
 
 function SignIn() {
@@ -26,7 +27,7 @@ function SignIn() {
         <h1 style={{ color: "#FFF" }}>Gerenciamento OS</h1>
       </Header>
       <Content>
-      <div className="error-login">{error === null && loginError === null ? (null) : (<Alert message={error || loginError} type="error" />)}</div>  
+        <AlertComponent message={error || loginError} type="error"/>
         <Row>
           <Col className="col-login" span={24}>
             <Form
